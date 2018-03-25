@@ -13,7 +13,7 @@ class RegisterForm(forms.Form):
 
 class RegisterFormModel (forms.ModelForm):
 
-	def __init__ (self, fathers,*args, **kwargs):
+	def __init__(self, fathers,*args, **kwargs):
 		super().__init__(*args,**kwargs)
 		self.fields['father'].queryset = fathers 
 
