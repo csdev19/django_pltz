@@ -5,10 +5,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title> {% block title %} {% endblock title %} </title>
 	<link rel="stylesheet" href="">
+	<style media="screen">
+		div.a {
+			background-color: lightblue; 
+		}
+		div.b {
+			background-color: lightcoral;
+		}
+	</style>
 </head>
 <body>
-	{% block content %}
-		
-	{% endblock content %}
+	<div class="{% if request.session.testab == "a" %}a{% endif%}
+				{% if request.session.testab == "b" %}b{%endif%}
+	">
+		{% block content %}
+			
+		{% endblock content %}
+	</div>
+
 </body>
 </html>

@@ -1,12 +1,12 @@
 from django.http import Http404
-
+import random
 
 # lo que dice esto que se si quieres acceder a una vista
 # te va a lanzar un error 404 si no pones dentro de la ruta
 # /?secret y lo igualas a lo que quieras recibir
 # ejm : localhost:8000/?secret=platzi y funcionara
 class SecretMiddleware:
-    
+
     def __init__(self, get_response):
         self.get_response = get_response
 
@@ -24,4 +24,17 @@ class SecretMiddleware:
         # despues de la vista
         return response
 
+
+class ABMiddleware:
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        #antes de la vista  
+        if 'testab' not in request.session:
+            request.session['testab'] = random.choice(['a','b'])
+        response = self.get_response(request)
+
+        return response
 
