@@ -1,0 +1,18 @@
+{# {% extends "countries/base.html" %} #}
+
+{% block content %}
+
+	<h1>Aqui encuentras los enlaces de navegacion hacia las otras paginas</h1>
+	
+	<div class="indices">
+		<nav>
+			<ul>
+				<li><a href="{% url "tags" %}" >Tags</a></li>
+				<li><a href="{% url "continent:home" %}" >Cotinent</a></li>
+				<li><a href="{% url "countries:id_detail" pk=7 %}" >country id</a></li>
+				{# <li><a href="{% url "country_detail" %}" >country code</a></li> #}
+			</ul>
+		</nav>
+	</div>
+
+{% endblock content %}

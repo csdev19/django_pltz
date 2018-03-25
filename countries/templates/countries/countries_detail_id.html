@@ -1,0 +1,12 @@
+{% extends "countries/base.html" %}
+
+
+{% block content %}
+
+<p> hi u got catched by CountriesDetail<h1>ID</h1>View</p>
+
+	{{ id }}
+	{% include "countries/country.html" with country=object %}
+
+
+{% endblock content %}

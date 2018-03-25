@@ -1,0 +1,15 @@
+{% extends "countries/base.html" %}
+
+{% block content %}
+	<p>hola como estas vamos a cumplir el reto</p>
+
+
+	{% for continente in continentes %}
+		<hr>
+		{% include "continentes/continentes.html" %}
+		<hr>
+	{% endfor %}
+
+
+
+{% endblock content %}

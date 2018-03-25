@@ -1,0 +1,16 @@
+{% extends "countries/base.html" %}
+
+{% block content %}
+	<form action="." method="post" >
+		{% csrf_token %}
+			
+		{{ form }}	
+
+
+<!--		<label for="first_name">First Name<input type="text" name="first_name" value=""></label>
+		<label for="second_name">Second Name<input type="text" name="second_name" value=""></label>
+-->
+
+		<input type="submit" name="" value="Register" placeholder="">
+	</form>
+{% endblock content %}

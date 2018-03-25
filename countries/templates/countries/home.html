@@ -1,0 +1,19 @@
+{% extends "countries/base.html" %}
+{% block title %}
+	Home
+{% endblock title %}
+{% block content %}
+	{# <p>rem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, dolo	remque, facere! At dolor error qui neque ut, cupiditate minus praesentium! Delectus repudiandae quia minima inventore voluptatem quibusdam nihil, temporibus amet.</p> #}	
+
+	{% for country in countries %}
+		{% include "countries/country.html" %}
+	{% endfor %}
+
+	{% include "countries/index_page.html" %}	
+
+	<div>
+		<p><a href="{% url 'tags' %}" >Ir a tags</a></p>
+		<p><a href="{% url 'tags' %}" >Ir a tags</a></p>
+	</div>
+
+{% endblock content %}

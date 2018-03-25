@@ -1,0 +1,12 @@
+
+<div>
+	<hr>
+	<h2>name : {{ country.name|title }}</h1>
+	<h1>code : {{ country.id }}</h3>
+	{% if  country.id == 1 %}
+		<h3>yeah : {{ country.name|upper }} </h3>
+	{% endif %}
+	<p>detail_url <a href="{% url 'countries:id_detail' pk=7 %}">Ir al detalle</a></p>
+	<p>detail_url <a href="{% url 'continent:home' %}">Ir a countinents</a></p>
+	<hr>
+</div>

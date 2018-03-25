@@ -1,0 +1,16 @@
+{% extends "countries/base.html" %}
+
+
+{% block content %}
+
+<p> hi u got catched by CountriesDetailView</p>
+
+	{{ code }}
+	{% for country in countries %}
+		{% if country.code_country == code  %}
+			{% include "countries/country.html" %}
+		{% endif %}
+	{% endfor %}
+
+
+{% endblock content %}

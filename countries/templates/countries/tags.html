@@ -1,0 +1,18 @@
+{% extends "countries/base.html" %}
+{% block title %}
+	Tags
+{% endblock title %}
+{% block content %}
+	{# ds #}
+	<p> hola estas en mi tag </p>
+	{% comment %}  {% endcomment %} 
+
+	<ul>
+	{% for hola in  saludo %}
+		<li>{{ hola }}</li>
+	{% endfor %}
+	</ul>
+	
+	{# este es un tipo de context procesor especial #}
+	{{ request.user}}	
+{% endblock content %}	
