@@ -5,11 +5,12 @@ from people.models import Person
 
 # Create your views here.
 def register (request):
+	fathers = Person.objects.filter(children__isnull=True)
 	form = RegisterFormModel(request.POST or None)
 
 	if form.is_valid():
 		person = form.save()
-		
+
 		return JsonResponse(
 			{
 				'name':person.first_name,
